@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta content="商城" http-equiv="keywords">
+	<meta name="description" content="商城,购物">
+	<meta name="format-detection" content="telephone=no"><!-- 禁止IPHONE识别手机号码 -->
+	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+	<title>微超市</title>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<!-- public_css -->
+	<link rel="stylesheet" type="text/css" href="css/public/public_lib.css">
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+</head>
+
+<body>
+	<!--头部-->
+	<header class="module-layer">
+		<div class="module-layer-content">
+			<p class="layer-logo"><img src="images/logo.png"></p>
+			<h1 class="layer-head-name">
+				<div class="pr search-box">
+					<img class="shop-search" src="images/icon_search.png">
+					<input id="shop-input" type="text" placeholder="零食" value="">
+				</div>
+			</h1>
+			<p class="layer-login"><a href="login.html">登录</a></p>
+		</div>
+	</header>
+	<!-- 主体 -->
+	<div class="module-content">
+		<!--banner图-->
+		<div class="swiper-container banner swiper-container-horizontal">
+			<ul class="swiper-wrapper" style="transform: translate3d(-674px, 0px, 0px); transition-duration: 0ms;">
+				<li class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="width: 337px;">
+					<img src="images/banner.jpg">
+				</li>
+				<li class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="width: 337px;">
+					<img src="images/banner02.jpg">
+				</li>
+				<li class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style="width: 337px;">
+					<img src="images/banner03.jpg">
+				</li>
+				<li class="swiper-slide" data-swiper-slide-index="3" style="width: 337px;">
+					<img src="images/banner01.jpg">
+				</li>
+			</ul>
+			<div class="swiper-pagination sp01 swiper-pagination-clickable swiper-pagination-bullets">
+				<span class="swiper-pagination-bullet"></span>
+				<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+				<span class="swiper-pagination-bullet"></span>
+				<span class="swiper-pagination-bullet"></span>
+			</div>
+			<script>
+				var swiper = new Swiper('.banner', {
+					pagination: '.sp01',//小圆点计数器
+					paginationClickable: true,//点击计数器切换
+					autoplay: "3000",
+					loop: "ture",
+					speed: 800,
+					autoplayDisableOnInteraction: false,
+				});
+			</script>
+		</div>
+
+		<!-- 图标导航icon -->
+		<div class="nav_iconbox">
+			<ul style="width: 100%;">
+				<li>
+					<a href="#">
+						<img src="images/nav_icon01.png">
+						<span>饮料饮品</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/nav_icon02.png">
+						<span>休闲零食</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/nav_icon03.png">
+						<span>新鲜水果</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/nav_icon04.png">
+						<span>散称零食</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/nav_icon05.png">
+						<span>方便面</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/nav_icon06.png">
+						<span>酒水专区</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/nav_icon07.png">
+						<span>冲调食品</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/nav_icon08.png">
+						<span>牛奶</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 商城公告和商家入驻口 -->
+		<div class="news_sj_dxs_box bgwh mb6">
+			<div class="scrollnews">
+				<span><a href="#"><img src="images/news_tit.png"></a></span>
+				<ul style="margin-top: 0px;">
+					<li><a href="#">热烈祝贺微超市内测版上线</a></li>
+					<li><a href="#">组长在课设完工大会上发表演讲！</a></li>
+					<li><a href="#">热烈祝贺本小组h5课程设计完工</a></li>
+				</ul>
+				<script type="text/javascript">
+					$(document).ready(function () {
+						//滚动文字
+						function runtxt() {
+							$(".scrollnews ul").animate({ marginTop: "-.4rem" }, 1000,
+								function () {
+									$(".scrollnews ul li:last").after($(".scrollnews ul li:first"))
+									$(".scrollnews ul").css("margin-top", 0)
+								}
+							)
+						}
+						timer = setInterval(runtxt, 4000)
+					})
+				</script>
+			</div>
+			<div class="sj_dxs_box">
+				<h2>
+					<a href="#">
+						<img src="images/bg_sj.jpg">
+					</a>
+				</h2>
+			</div>
+		</div>
+
+		<!-- 热销商品 -->
+		<div class="yh_select bgwh mb6">
+			<div class="index_title rel">
+				<h1>
+					<a>热销商品</a>
+				</h1>
+			</div>
+			<div class="yh_goodsbox fix">
+				<div class="l">
+					<div class="swiper-container yh_wrapper swiper-container-horizontal">
+						<ul class="swiper-wrapper"
+							style="transform: translate3d(-588px, 0px, 0px); transition-duration: 0ms;">
+							<li class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0"
+								style="width: 147px;">
+								<a href="#">
+									<img src="images/pic01.jpg">
+									<p>10支纳米牙刷软毛成人家用竹炭抑菌款</p>
+									<span>￥29.00</span>
+								</a>
+							</li>
+							<li class="swiper-slide" data-swiper-slide-index="1" style="width: 147px;">
+								<a href="#">
+									<img src="images/pic03.jpg">
+									<p>【新品】康师傅金汤虾球面，营养健康新体验</p>
+									<span>￥5.00</span>
+								</a>
+							</li>
+							<li class="swiper-slide swiper-slide-prev swiper-slide-duplicate-next"
+								data-swiper-slide-index="2" style="width: 147px;">
+								<a href="#">
+									<img src="images/pic08.jpg">
+									<p>RIO锐澳鸡尾酒套装预调酒果酒洋酒经典275ml*24瓶</p>
+									<span>￥199.00</span>
+								</a>
+							</li>
+						</ul>
+						<div class="swiper-pagination sp02 swiper-pagination-clickable swiper-pagination-bullets">
+							<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+							<span class="swiper-pagination-bullet"></span>
+							<span class="swiper-pagination-bullet"></span>
+						</div>
+						<script>
+							var swiper = new Swiper('.yh_wrapper', {
+								pagination: '.sp02',
+								paginationClickable: true,//点击分页器的指示点分页器会控制切换
+								autoplay: "3000",
+								loop: "ture",//循环
+								speed: 500,
+								autoplayDisableOnInteraction: false//用户操作后不会停止
+							});
+						</script>
+					</div>
+				</div>
+
+				<div class="two r">
+					<h2>
+						<a href="#"><img src="images/index_ad_pic(2).jpg"></a>
+					</h2>
+					<h3>
+						<a href="#"><img src="images/index_ad_pic(3).jpg"></a>
+					</h3>
+					<h4>
+						<a href="#"><img src="images/index_ad_pic(6).jpg"></a>
+					</h4>
+				</div>
+			</div>
+		</div>
+
+		<!-- 广告条 -->
+		<div class="ad_picbox swiper-container-horizontal swiper-container-fade">
+			<ul class="swiper-wrapper" style="transition-duration: 700ms;">
+				<li class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2"
+					style="width: 320px; transform: translate3d(0px, 0px, 0px); opacity: 1; transition-duration: 700ms;">
+					<a href="#"><img src="images/ad_pic03.jpg"></a>
+				</li>
+				<li class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
+					style="width: 320px; transform: translate3d(-320px, 0px, 0px); opacity: 1; transition-duration: 700ms;">
+					<a href="#"><img src="images/ad_pic01.jpg"></a>
+				</li>
+				<li class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
+					style="width: 320px; transform: translate3d(-640px, 0px, 0px); opacity: 1; transition-duration: 700ms;">
+					<a href="#"><img src="images/ad_pic02.jpg"></a>
+				</li>
+			</ul>
+			<script>
+				var swiper = new Swiper('.ad_picbox', {
+					autoplay: "4000",
+					effect: "fade",//渐变效果
+					loop: "ture",
+					speed: 700,
+					autoplayDisableOnInteraction: false,
+				});
+			</script>
+		</div>
+
+		<!-- 新品推荐 -->
+		<div class="new_goods bgwh mb6">
+			<div class="index_title rel">
+				<h1>
+					<a>新品推荐</a>
+				</h1>
+			</div>
+			<div class="nine_goods_pic">
+				<ul>
+					<li>
+						<a href="#">
+							<img src="images/pic01.jpg" style="height: 99px;">
+							<p>10支纳米牙刷软毛成人家用竹炭抑菌款</p>
+							<span>￥29.00</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/pic03.jpg" style="height: 99px;">
+							<p>【新品】康师傅金汤虾球面，营养健康新体验</p>
+							<span>￥49.00</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/pic08.jpg" style="height: 99px;">
+							<p>RIO锐澳鸡尾酒套装预调酒果酒洋酒经典275ml*24瓶</p>
+							<span>￥399.00</span>
+						</a>
+					</li>
+				</ul>
+				<div class="btn_link">
+					<a href="#">更多新品&gt;</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 返回顶部 -->
+		<div class="go_top">
+			<a class="btn_top"></a>
+		</div>
+		<script type="text/javascript">
+			$(function () {
+				window.onscroll = function () {
+					var autoheight = document.body.scrollTop || document.documentElement.scrollTop;
+					if (autoheight > 100) {
+						$(".go_top").fadeIn()
+					} else {
+						$(".go_top").fadeOut()
+					}
+				}
+				$(".btn_top").mousedown(
+					function () {
+						$("html, body").animate({ "scroll-top": 0 }, "fast");
+					}
+				)
+			})
+		</script>
+
+		<!-- 底部 -->
+		<div class="footer_box">
+			<div class="footer">
+				<div class="txt">
+					<p>Copyright © 2020 微超市</p>
+					<p>联系地址：山东省枣庄市市中区北安路1号</p>
+					<p>全国服务热线:0632-8888-8888 &nbsp;&nbsp;&nbsp;技术支持：<a href="https://www.runoob.com/" target="blank"
+							style="color: #999;">TangID</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 底部导航 -->
+		<div class="foot_menu">
+			<ul>
+				<li class="cur">
+					<a href="index.html">
+						<i><img src="images/menu_icon01_r.png"></i>
+						<span>首 页</span>
+					</a>
+				</li>
+				<li>
+					<a href="catalog.html">
+						<i><img src="images/menu_icon02.png"></i>
+						<span>分 类</span>
+					</a>
+				</li>
+				<li class="gwc">
+					<a href="flow.html">
+						<i><img src="images/menu_icon03.png"></i>
+						<span>购物车</span>
+						<em>2</em>
+					</a>
+				</li>
+				<li>
+					<a href="user.html">
+						<i><img src="images/menu_icon04.png"></i>
+						<span>我 的</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+
+</html>
